@@ -1,0 +1,63 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+        
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+subprojects {
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << '-Xmaxerrs' << '500'
+        }
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    //SDK versions
+    compileSdkVersion = 26
+    buildToolsVersion = '27.0.3'
+    minSdkVersion  = 22
+    targetSdkVersion = 26
+
+    roomVersion = "1.0.0"
+    archLifecycleVersion = "1.0.0-rc1"
+
+    // App dependencies
+    supportLibraryVersion = '27.0.2'
+    guavaVersion = '22.0-android'
+    junitVersion = '4.12'
+    runnerVersion = '1.0.1'
+    rulesVersion = '1.0.1'
+    espressoVersion = '3.0.1'
+    testRunnerVersion = '1.0.1'
+    daggerVersion = '2.0'
+    retrofitVersion = '2.3.0'
+    converterjacksonVersion = '2.1.0'
+    jacksonparentVersion = '2.6.2'
+    logginginterceptorVersion = '3.4.1'
+    annotationVersion = '1.0'
+    roomVersion = "1.0.0"
+}

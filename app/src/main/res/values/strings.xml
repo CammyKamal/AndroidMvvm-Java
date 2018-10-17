@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Kamal Arch Components</string>
+    <string name="welcome_message">Welcome To Demo Assignment</string>
+    <string name="movies_text">Movies</string>
+    <string name="release_date">Release Date :</string>
+    <string name="overview">Overview</string>
+</resources>

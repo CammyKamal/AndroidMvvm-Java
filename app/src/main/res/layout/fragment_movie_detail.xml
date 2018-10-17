@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.kamal.archcompnonents.moviedetail.MovieDetailViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/colorGrey" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/movie_detail_iv"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_17sdp"
+            android:src="@drawable/movie_icon" />
+
+        <TextView
+            android:id="@+id/overview_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/movie_detail_iv"
+            android:layout_marginLeft="@dimen/_17sdp"
+            android:layout_marginTop="@dimen/_17sdp"
+            android:text="@string/overview"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_17ssp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/divider_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_below="@+id/overview_tv"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:id="@+id/movie_desc_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/divider_view"
+            android:layout_marginLeft="@dimen/_17sdp"
+            android:layout_marginRight="@dimen/_17sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:gravity="left"
+            android:padding="@dimen/_4sdp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_15ssp"
+            app:text="@{model.getOverview()}" />
+
+
+    </RelativeLayout>
+
+</layout>

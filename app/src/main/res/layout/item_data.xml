@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kamal.archcompnonents.movielist.MovieItemViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_67sdp"
+        android:layout_margin="@dimen/_9sdp"
+        android:background="@color/colorBackground">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/movie_iv"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/movie_icon" />
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/movie_iv"
+            android:layout_marginLeft="@dimen/_9sdp"
+            android:layout_toRightOf="@+id/movie_iv"
+            android:gravity="left"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_15ssp"
+            app:text="@{viewModel.getMovieTitle()}"
+            tools:text="Item Title" />
+
+        <TextView
+            android:id="@+id/release_date_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_tv"
+            android:layout_marginLeft="@dimen/_9sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_toRightOf="@+id/movie_iv"
+            android:gravity="left"
+            android:text="@string/release_date"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:id="@+id/release_date_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_tv"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_toRightOf="@+id/release_date_label_tv"
+            android:gravity="left"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/_14ssp"
+            app:text="@{viewModel.getMovieReleaseDate()}"
+            tools:text="Item Title" />
+
+    </RelativeLayout>
+
+</layout>
